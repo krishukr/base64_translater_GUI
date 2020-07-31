@@ -35,12 +35,11 @@ def dragged_files(files):
     if len(files) > 1:
         tkinter.messagebox.showerror('Oops!', '拖入的文件太多啦\n只能拖一个哦')
     else:
-        # tkinter.messagebox.showinfo('您拖动的文件', msg)
         data = translate_base64(msg)
-        save_data(data, os.path.splitext(msg)[0] + '.txt')
+        save_data(data, msg + '.txt')
         tkinter.messagebox.showinfo(
-            'Done!', '存储到 ' + os.path.splitext(msg)[0] + '.txt')
-        os.system('start ' + os.path.splitext(msg)[0] + '.txt')
+            'Done!', '存储到 ' + msg + '.txt')
+        os.startfile(msg + '.txt')
 
 
 def clicked_files():
@@ -48,12 +47,11 @@ def clicked_files():
 
     if len(files) > 0:
         msg = files
-        # tkinter.messagebox.showinfo('您选择的文件', msg)
         data = translate_base64(msg)
-        save_data(data, os.path.splitext(msg)[0] + '.txt')
+        save_data(data, msg + '.txt')
         tkinter.messagebox.showinfo(
-            'Done!', '存储到 ' + os.path.splitext(msg)[0] + '.txt')
-        os.system('start ' + os.path.splitext(msg)[0] + '.txt')
+            'Done!', '存储到 ' + msg + '.txt')
+        os.system('start ' + msg + '.txt')
     else:
         pass
 
