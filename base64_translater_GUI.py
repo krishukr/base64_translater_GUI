@@ -51,7 +51,7 @@ def clicked_files():
         save_data(data, msg + '.txt')
         tkinter.messagebox.showinfo(
             'Done!', '存储到 ' + msg + '.txt')
-        os.system('start ' + msg + '.txt')
+        os.startfile(msg + '.txt')
     else:
         pass
 
